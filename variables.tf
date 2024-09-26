@@ -1,15 +1,16 @@
-variable "token_api" {
+# Digitalocean variables
+variable "digitalocean_token" {
   description = "DigitalOcean API token used for authentication"
   type        = string
   sensitive   = true
 }
 
-variable "droplet_name" {
+variable "current_droplet_name" {
   description = "Name of the initial droplet instance hosted on TSRV-DEV"
   type        = string
 }
 
-variable "new_droplet_name" {
+variable "from_snapshot_droplet_name" {
   description = "Name of the newly created droplet hosted on TSRV-DEV"
   type        = string
 }
@@ -24,17 +25,24 @@ variable "droplet_size" {
   type        = string
 }
 
-variable "droplet_ssh_file" {
-  description = "Path to the SSH key file used for authenticating to the droplet"
-  type        = string
-}
-
-variable "droplet_ssh_key_name" {
-  description = "Name identifier for the SSH key used to access the droplet"
-  type        = string
-}
-
 variable "droplet_graceful_shutdown" {
   description = "Flag to enable a graceful shutdown for the droplet during termination"
   type        = bool
+}
+
+# Cloudflare root variables
+variable "cloudflare_token" {
+  description = "CloudFlare API token used for authentication"
+  type        = string
+  sensitive   = true
+}
+
+variable "domain_name" {
+  description = "CloudFlare registered domain name"
+  type        = string
+}
+
+variable "dep_domain_name" {
+  description = "Subdomain name value mapped to DNS records for the droplet"
+  type        = string
 }

@@ -1,16 +1,17 @@
-variable "token_api" {
-  description = "Token API from digitalocean"
+# Digitalocean variables
+variable "digitalocean_token" {
+  description = "DigitalOcean API token used for authentication"
   type        = string
   sensitive   = true
 }
 
-variable "droplet_name" {
-  description = "Name of the droplet hosted on TSRV-DEV"
+variable "current_droplet_name" {
+  description = "Name of the initial droplet instance hosted on TSRV-DEV"
   type        = string
 }
 
-variable "new_droplet_name" {
-  description = "Name of the droplet hosted on TSRV-DEV"
+variable "from_snapshot_droplet_name" {
+  description = "Name of the newly created droplet hosted on TSRV-DEV"
   type        = string
 }
 
@@ -21,16 +22,6 @@ variable "droplet_region" {
 
 variable "droplet_size" {
   description = "Size of the droplet"
-  type        = string
-}
-
-variable "droplet_ssh_file" {
-  description = "SSH file for the droplet"
-  type        = string
-}
-
-variable "droplet_ssh_key_name" {
-  description = "Name of the SSH file"
   type        = string
 }
 

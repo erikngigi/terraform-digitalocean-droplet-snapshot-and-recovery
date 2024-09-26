@@ -8,5 +8,5 @@ terraform {
 }
 
 provider "digitalocean" {
-  token = var.token_api
+  token = var.digitalocean_token
 }
